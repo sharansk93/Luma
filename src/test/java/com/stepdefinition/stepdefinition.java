@@ -3,6 +3,7 @@ package com.stepdefinition;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -125,7 +126,7 @@ public class stepdefinition extends Baseclass {
 	}
 
 	@Then("I print the order ID")
-	public void i_print_the_order_id() throws InterruptedException {
+	public void i_print_the_order_id() throws InterruptedException, IOException {
 		
 //		WebDriverWait wait= new WebDriverWait(driver, 10);
 //		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(s.getcheckout().getNext()));
@@ -140,6 +141,8 @@ public class stepdefinition extends Baseclass {
 //		WebElement next = s.getcheckout().getNext();
 //		next.click();
 //		js.executeScript("arguments[0].click();", s.getcheckout().getNext());
+		
+		Screenshot();
 	
 	}
 

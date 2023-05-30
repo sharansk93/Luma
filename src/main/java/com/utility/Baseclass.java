@@ -1,8 +1,12 @@
 package com.utility;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,6 +39,13 @@ public class Baseclass {
 	
 	public void sendkeys(WebElement e, String s) {
 		e.sendKeys(s);
+	}
+	
+	public void Screenshot() throws IOException {
+		TakesScreenshot ts= (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File des= new File("target/screenshot/luma.png");
+		FileUtils.copyFile(source, des);
 	}
 
 }
